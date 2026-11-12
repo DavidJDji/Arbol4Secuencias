@@ -2,14 +2,14 @@
 
 using namespace std;
 
-// Definicion de la estructura para cada elemento del arbol
+
 struct Elemento {
     int valor;
     Elemento* izquierdo;
     Elemento* derecho;
 };
 
-// Crea e inicializa un nuevo elemento con el valor indicado
+
 Elemento* insertarNodo(int val) {
     Elemento* nuevo = new Elemento();
     nuevo->valor = val;
@@ -18,7 +18,7 @@ Elemento* insertarNodo(int val) {
     return nuevo;
 }
 
-// Imprime los elementos siguiendo el orden: Raiz -> Izquierda -> Derecha
+
 void mostrarPreorden(Elemento* nodo) {
     if (nodo != nullptr) {
         cout << nodo->valor << " ";
@@ -27,7 +27,7 @@ void mostrarPreorden(Elemento* nodo) {
     }
 }
 
-// Imprime los elementos siguiendo el orden: Izquierda -> Raiz -> Derecha
+
 void mostrarInorden(Elemento* nodo) {
     if (nodo != nullptr) {
         mostrarInorden(nodo->izquierdo);
@@ -36,7 +36,7 @@ void mostrarInorden(Elemento* nodo) {
     }
 }
 
-// Imprime los elementos siguiendo el orden: Izquierda -> Derecha -> Raiz
+
 void mostrarPostorden(Elemento* nodo) {
     if (nodo != nullptr) {
         mostrarPostorden(nodo->izquierdo);
@@ -46,7 +46,7 @@ void mostrarPostorden(Elemento* nodo) {
 }
 
 int main() {
-    // Armado del arbol binario respetando los 4 niveles de profundidad
+ 
     Elemento* raiz = insertarNodo(50);
     raiz->izquierdo = insertarNodo(25);
     raiz->derecho = insertarNodo(75);
@@ -54,7 +54,7 @@ int main() {
     raiz->izquierdo->derecho = insertarNodo(35);
     raiz->izquierdo->izquierdo->izquierdo = insertarNodo(5);
 
-    // Dibujo de la estructura del arbol para mostrarlo en pantalla
+    
     cout << "=== ARBOL BINARIO DE 4 NIVELES ===" << endl;
     cout << "            (50)            " << endl;
     cout << "           /    \\           " << endl;
@@ -65,7 +65,7 @@ int main() {
     cout << "     (5)                    " << endl;
     cout << "----------------------------------" << endl;
 
-    // Llamada a las funciones para mostrar los tres recorridos
+   
     cout << "Secuencia PreOrden  : ";
     mostrarPreorden(raiz);
     cout << endl;
